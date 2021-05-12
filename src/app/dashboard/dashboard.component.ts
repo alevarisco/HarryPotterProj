@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -16,6 +17,10 @@ export class DashboardComponent implements OnInit {
   /* Llamada al componente de Personajes */
   viewPersonajes(){
     this.router.navigate(['/personajes'])
-//, { queryParams: { pregunta: pregunta, correo: correo} }
+  }
+
+  /* Llamada al componente de Profesores */
+  viewProfesores(){
+    this.router.navigate(['/profesores'])
   }
 }

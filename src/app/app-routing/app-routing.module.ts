@@ -5,6 +5,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { PersonajesComponent } from '../view/personajes/personajes.component';
+import { ProfesoresComponent } from '../view/profesores/profesores.component';
 
 const routes: Routes = [
 
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'personajes',
     component: PersonajesComponent
+  },
+  {
+    path: 'profesores',
+    component: ProfesoresComponent
   }
 
 ];

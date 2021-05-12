@@ -1,1 +1,25 @@
-<p>profesores works!</p>
+<app-navigation></app-navigation>
+
+$scope.CurrentDate = new Date();
+
+
+<div class="center">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Patronus</th>
+            <th scope="col">Age</th>
+            <th scope="col">Image</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let persona of personajes">
+                <td>{{persona.name}}</td>
+                <td>{{persona.patronus}}</td>
+                <td>{{(today | date: 'yyyy') - (persona.yearOfBirth | date: 'yyyy')}}</td>
+                <td cellpadding="0" cellspacing="0" class="avatar-cell"><img class="avatar" src="{{persona.image}}" alt="persona"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

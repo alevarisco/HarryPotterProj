@@ -13,10 +13,15 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-/* Llamada al componente de Personajes */
+  /* Llamada al componente de Personajes */
   viewPersonajes(){
-  this.router.navigate(['/personajes'])
+    this.router.navigate(['/personajes'])
 //, { queryParams: { pregunta: pregunta, correo: correo} }
 }
+
+/* Llamada al componente de Profesores */
+  viewProfesores(){
+    this.router.navigate(['/profesores'])
+  }
 
 }

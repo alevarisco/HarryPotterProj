@@ -15,7 +15,8 @@ export class PersonajesComponent implements OnInit {
 
   casaSeleccionada: string = '';
   personajes: Persona[];
-  currentYear:Date;
+  today = Date.now();
+
 
   constructor(
     public fb: FormBuilder,
@@ -34,6 +35,7 @@ export class PersonajesComponent implements OnInit {
   //  })
   }
 
+  /* Chequea si esta seleccionado un valor en el dropdown */
   selectChangeHandler (event: any) {
     this.casaSeleccionada = event.target.value;
     console.log(this.casaSeleccionada)

@@ -16,8 +16,15 @@ export class PersonajesService {
     private processHTTPMessageService: ProcessHttpMessageService) {
    }
 
+   /* Consulta a la API de los estudiantes de una casa */
    getCasa(nombreCasa): Observable<any>{
      return this.http.get('http://hp-api.herokuapp.com/api/characters/house/' + nombreCasa)
      .pipe(catchError(this.processHTTPMessageService.handleError));
+  }
+
+  /* Consulta a la API de los los profesores */
+  getProfesores(): Observable<any>{
+    return this.http.get('http://hp-api.herokuapp.com/api/characters/staff')
+    .pipe(catchError(this.processHTTPMessageService.handleError));
   }
 }
