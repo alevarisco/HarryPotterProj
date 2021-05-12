@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/class/persona';
-import { PersonajesService } from "../../services/personajes.service";
-
+import { PersonajesService } from 'src/app/services/personajes.service';
 
 @Component({
-  selector: 'app-profesores',
-  templateUrl: './profesores.component.html',
-  styleUrls: ['./profesores.component.css']
+  selector: 'app-estudiantes-nuevos',
+  templateUrl: './estudiantes-nuevos.component.html',
+  styleUrls: ['./estudiantes-nuevos.component.css']
 })
-export class ProfesoresComponent implements OnInit {
+export class EstudiantesNuevosComponent implements OnInit {
 
   personajes: Persona[];
   currentYear: number = new Date().getFullYear();
@@ -24,10 +23,11 @@ export class ProfesoresComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.personajesService.getProfesores().subscribe(data => {
+    this.personajesService.getEstudiantesNuevos().subscribe(data => {
       this.personajes =  data as Persona[];
       
      console.log(data)
    })
   }
+
 }

@@ -15,7 +15,8 @@ export class PersonajesComponent implements OnInit {
 
   casaSeleccionada: string = '';
   personajes: Persona[];
-  today = Date.now();
+  currentYear: number = new Date().getFullYear();
+
 
 
   constructor(

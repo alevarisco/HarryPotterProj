@@ -1,1 +1,145 @@
-<p>estudiantes works!</p>
+<app-navigation></app-navigation>
+
+<div class="center" >
+
+    <p>
+        <a class="btn btn-success" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Agregar estudiante
+        </a>
+    </p>
+    <div class="collapse" id="collapseExample" >
+        <div class="card card-body">
+            
+            <form class="row g-3 needs-validation" novalidate [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+                
+                <div class="col-md-4 position-relative">
+                  <label for="validationTooltip01" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="validationTooltip01" formControlName="name" required>
+                </div>
+                <div class="col-md-4 position-relative">
+                  <label for="validationTooltip02" class="form-label">Patronus</label>
+                  <input type="text" class="form-control" id="validationTooltip02"  formControlName="patronus" required>
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip03" class="form-label">¿Vive?</label>
+                    <article>
+                        <select formControlName="alive">
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </article>
+                </div>
+                <div class="col-md-4 position-relative">
+                  <label for="validationTooltip03" class="form-label">Ancestros</label>
+                  <input type="text" class="form-control" id="validationTooltip03" required formControlName="ancestry">
+                </div>
+                <div class="col-md-3 position-relative">
+                    <label for="validationTooltip03" class="form-label">Fecha nacimiento</label>
+
+                    <div class="input-group">
+                        <input class="form-control"
+                                name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" formControlName="dateOfBirth">
+                        <button class="btn btn-secondary" (click)="d.toggle()" type="button"></button>
+                    </div>
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip03" class="form-label">Color de ojos</label>
+                    <input type="text" class="form-control" id="validationTooltip03" required formControlName="eyeColour">
+                </div>
+        
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip03" class="form-label">Selecciona un Genero</label>
+                    <article>
+                        <select formControlName="gender">
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                        </select>
+                    </article>
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip03" class="form-label">Nombre del actor</label>
+                    <input type="text" class="form-control" id="validationTooltip03" required formControlName="actor">
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip03" class="form-label">Color de cabello</label>
+                    <input type="text" class="form-control" id="validationTooltip03" required formControlName="hairColour">
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip03" class="form-label">Selecciona una casa</label>
+
+                    <article>
+                        <select formControlName="casa">
+                            <option value="slytherin">Slytherin</option>
+                            <option value="gryffindor">Gryffindor</option>
+                            <option value="ravenclaw ">Ravenclaw</option>
+                            <option value="hufflepuff">Hufflepuff</option>
+                        </select>
+                    </article>
+                </div>
+
+                <div class="input-group mb-2">
+                    <label for="validationTooltip03" class="form-label">Introduzca un URL</label>
+                    <input type="text" class="form-control" id="validationTooltip03" required formControlName="image">
+                </div>
+
+
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip03" class="form-label">Selecciona una especie</label>
+                    <article>
+                        <select formControlName="species">
+                            <option value="Humano">Humano</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </article>
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip03" class="form-label">Núcleo de la varita</label>
+                    <input type="text" class="form-control" id="validationTooltip03" required formControlName="core">
+                </div>
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip03" class="form-label">Longitud</label>
+                    <input type="text" class="form-control" id="validationTooltip03" required formControlName="longitud">
+                </div>
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip03" class="form-label">Madera</label>
+                    <input type="text" class="form-control" id="validationTooltip03" required formControlName="wood">
+                </div>
+
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+
+            
+        </div>
+    </div>
+    
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Patronus</th>
+            <th scope="col">Age</th>
+            <th scope="col">Image</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let persona of personajes">
+                <td>{{persona.name}}</td>
+                <td>{{persona.patronus}}</td>
+                <!-- <td>{{ calcularEdad(persona.yearOfBirth | date: 'yyyy') }}</td> -->
+                <td>{{currentYear - persona.yearOfBirth}}</td>
+
+                <td cellpadding="0" cellspacing="0" class="avatar-cell"><img class="avatar" src="{{persona.image}}" alt="persona"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+</div>

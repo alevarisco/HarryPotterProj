@@ -6,6 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { PersonajesComponent } from '../view/personajes/personajes.component';
 import { ProfesoresComponent } from '../view/profesores/profesores.component';
+import { EstudiantesComponent } from '../view/estudiantes/estudiantes.component';
+import { EstudiantesNuevosComponent } from '../view/estudiantes/estudiantes-nuevos/estudiantes-nuevos.component';
 
 const routes: Routes = [
 
@@ -20,8 +22,15 @@ const routes: Routes = [
   {
     path: 'profesores',
     component: ProfesoresComponent
+  },
+  {
+    path: 'estudiantes',
+    component: EstudiantesComponent
+  },
+  {
+    path: 'estudiantes/nuevos',
+    component: EstudiantesNuevosComponent
   }
-
 ];
 
 @NgModule({

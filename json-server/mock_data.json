@@ -1,0 +1,27 @@
+{
+  "persona": [
+    {
+      "wand": {
+        "core": "Desconocidos",
+        "longitud": "0",
+        "wood": "Desconocidas"
+      },
+      "name": "Severus Snape",
+      "alive": "No",
+      "patronus": "Cierva",
+      "ancestry": "Tobias Snape",
+      "dateOfBirth": "9-1-2011",
+      "eyeColour": "Negros",
+      "gender": "Masculino",
+      "hogwartsStaff": false,
+      "hogwartsStudent": true,
+      "yearOfBirth": 2011,
+      "house": "slytherin",
+      "actor": "Alan Rickman",
+      "hairColour": "Negro",
+      "image": "https://static.wikia.nocookie.net/esharrypotter/images/c/c8/SeverusSnape_.jpg/revision/latest/scale-to-width-down/350?cb=20150821073836",
+      "species": "Humano",
+      "id": 1
+    }
+  ]
+}

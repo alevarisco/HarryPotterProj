@@ -23,4 +23,9 @@ export class DashboardComponent implements OnInit {
   viewProfesores(){
     this.router.navigate(['/profesores'])
   }
+
+  /* Llamada al componente de Estudiantes */
+  viewEstudiantes(){
+    this.router.navigate(['/estudiantes'])
+  }
 }

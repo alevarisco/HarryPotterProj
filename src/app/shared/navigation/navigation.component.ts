@@ -24,4 +24,14 @@ export class NavigationComponent implements OnInit {
     this.router.navigate(['/profesores'])
   }
 
+  /* Llamada al componente de Estudiantes */
+  viewEstudiantes(){
+    this.router.navigate(['/estudiantes'])
+  }
+
+  home(){
+    this.router.navigate(['/'])
+
+  }
+
 }
