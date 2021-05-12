@@ -1,0 +1,32 @@
+<app-navigation></app-navigation>
+
+<div class="center">
+    <article>
+        <h2><span>Selecciona una casa:</span></h2>
+        <select (change)="selectChangeHandler($event)">
+            <option value="slytherin">Slytherin</option>
+            <option value="gryffindor">Gryffindor</option>
+            <option value="ravenclaw ">Ravenclaw</option>
+            <option value="hufflepuff">Hufflepuff</option>
+        </select>
+    </article>
+    <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Patronus</th>
+            <th scope="col">Age</th>
+            <th scope="col">Image</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let persona of personajes">
+                <td>{{persona.name}}</td>
+                <td>{{persona.patronus}}</td>
+                <td>{{persona.yearOfBirth}}</td>
+                <td cellpadding="0" cellspacing="0" class="avatar-cell"><img class="avatar" src="{{persona.image}}" alt="persona"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
